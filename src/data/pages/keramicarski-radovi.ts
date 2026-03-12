@@ -12,15 +12,15 @@ const keramicerskiRadovi: ServicePageConfig = {
   services: [
     {
       title: 'Kupatila i kuhinje',
-      description: 'Skidanje starih pločica i postavljanje nove keramike.',
+      description: 'Skidanje starih pločica i postavljanje nove keramike po najsavremenijim standardima. Precizno sečenje, ravne fuge i pažljiva obrada svake ivice za savršen završni izgled vašeg prostora.',
     },
     {
       title: 'Terase i poslovni prostori',
-      description: 'Postavljanje granitne keramike velikih formata.',
+      description: 'Postavljanje granitne keramike velikih formata za terase, lokale i poslovne objekte. Radimo sa svim tipovima podloga i garantujemo otpornost na vremenske uslove i veliko opterećenje.',
     },
     {
       title: 'Hidroizolacija',
-      description: 'Stručna zaštita od vlage za dugotrajnost i sigurnost.',
+      description: 'Stručna zaštita od vlage za dugotrajnost i sigurnost vašeg prostora. Koristimo proverene materijale i tehnike koje sprečavaju prodor vode i štite konstrukciju od oštećenja.',
     },
   ],
   testimonial: {

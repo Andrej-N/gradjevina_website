@@ -12,15 +12,15 @@ const molerskeUsluge: ServicePageConfig = {
   services: [
     {
       title: 'Gletovanje i priprema',
-      description: 'Savršeno ravnanje zidova pre krečenja.',
+      description: 'Savršeno ravnanje zidova pre krečenja. Koristimo profesionalne mase za gletovanje koje garantuju trajnost i glatku površinu. Svaki zid prolazi kroz više faza obrade kako bi krajnji rezultat bio besprekoran.',
     },
     {
       title: 'Klasično krečenje',
-      description: 'Upotreba najkvalitetnijih perivih i poluperivih boja.',
+      description: 'Upotreba najkvalitetnijih perivih i poluperivih boja vodećih proizvođača. Pažljivo štitimo vaš nameštaj i podove, a radimo brzo i efikasno bez kompromisa u kvalitetu završne obrade.',
     },
     {
       title: 'Dekorativne tehnike',
-      description: 'Sahara, Travertino i druge moderne tehnike.',
+      description: 'Sahara, Travertino i druge moderne dekorativne tehnike koje vašem prostoru daju jedinstven i luksuzan izgled. Naši majstori su obučeni za najnovije trendove u unutrašnjem dizajnu.',
     },
   ],
   testimonial: {

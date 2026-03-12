@@ -11,15 +11,15 @@ const adaptacijeStanova: ServicePageConfig = {
   services: [
     {
       title: 'Rušenje i odvoz šuta',
-      description: 'Bezbedno uklanjanje starih zidova i čišćenje prostora.',
+      description: 'Bezbedno uklanjanje starih zidova, podova i instalacija uz kompletno čišćenje prostora. Organizujemo odvoz građevinskog otpada i pripremu terena za početak renoviranja.',
     },
     {
       title: 'Gipsarski radovi',
-      description: 'Spušteni plafoni, pregradni zidovi i skrivena svetla.',
+      description: 'Spušteni plafoni, pregradni zidovi i skrivena LED rasveta. Kreiramo moderne prostorne rešenja sa gips-karton pločama koje transformišu svaki prostor u funkcionalno okruženje.',
     },
     {
       title: 'Sistem ključ u ruke',
-      description: 'Koordinacija svih majstora od početka do kraja.',
+      description: 'Koordinacija svih majstora od početka do kraja projekta. Vi nam date ključ, mi vam vratimo potpuno renoviran prostor — bez stresa, bez kašnjenja i bez skrivenih troškova.',
     },
   ],
   testimonial: {

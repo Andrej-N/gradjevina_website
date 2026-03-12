@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   Home,
@@ -24,19 +24,42 @@ interface LayoutProps {
 
 export default function Layout({ children, contactCta, address }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white font-sans">
       {/* ============ HEADER ============ */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? 'bg-white/95 backdrop-blur-sm shadow-sm'
+            : 'bg-transparent'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             <Link to="/molerske-usluge-kragujevac" className="flex items-center gap-2 no-underline">
-              <div className="w-9 h-9 bg-navy rounded-lg flex items-center justify-center">
+              <div
+                className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 ${
+                  scrolled ? 'bg-navy' : 'bg-white/20 backdrop-blur-sm'
+                }`}
+              >
                 <Home className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-navy tracking-tight">MajstorPro</span>
+              <span
+                className={`text-xl font-bold tracking-tight transition-colors duration-300 ${
+                  scrolled ? 'text-navy' : 'text-white'
+                }`}
+              >
+                MajstorPro
+              </span>
             </Link>
 
             <nav className="hidden lg:flex items-center gap-8">
@@ -44,10 +67,12 @@ export default function Layout({ children, contactCta, address }: LayoutProps) {
                 <Link
                   key={href}
                   to={href}
-                  className={`text-sm font-medium transition-colors no-underline ${
+                  className={`text-sm font-medium transition-colors duration-300 no-underline ${
                     location.pathname === href
                       ? 'text-warm'
-                      : 'text-charcoal/70 hover:text-navy'
+                      : scrolled
+                        ? 'text-charcoal/70 hover:text-navy'
+                        : 'text-white/80 hover:text-white'
                   }`}
                 >
                   {label}
@@ -63,7 +88,9 @@ export default function Layout({ children, contactCta, address }: LayoutProps) {
                 Zatražite ponudu
               </a>
               <button
-                className="lg:hidden p-2 text-charcoal bg-transparent border-none"
+                className={`lg:hidden p-2 bg-transparent border-none transition-colors duration-300 ${
+                  scrolled ? 'text-charcoal' : 'text-white'
+                }`}
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle menu"
               >
@@ -73,8 +100,14 @@ export default function Layout({ children, contactCta, address }: LayoutProps) {
           </div>
 
           {mobileMenuOpen && (
-            <div className="lg:hidden pb-6 border-t border-gray-100 pt-4">
-              <nav className="flex flex-col gap-4">
+            <div
+              className={`lg:hidden pb-6 border-t pt-4 rounded-b-xl backdrop-blur-sm ${
+                scrolled
+                  ? 'bg-white/95 border-gray-100'
+                  : 'bg-navy/90 border-white/10'
+              }`}
+            >
+              <nav className="flex flex-col gap-4 px-4">
                 {NAV_LINKS.map(({ label, href }) => (
                   <Link
                     key={href}
@@ -82,7 +115,9 @@ export default function Layout({ children, contactCta, address }: LayoutProps) {
                     className={`text-base font-medium transition-colors no-underline ${
                       location.pathname === href
                         ? 'text-warm'
-                        : 'text-charcoal/70 hover:text-navy'
+                        : scrolled
+                          ? 'text-charcoal/70 hover:text-navy'
+                          : 'text-white/80 hover:text-white'
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >

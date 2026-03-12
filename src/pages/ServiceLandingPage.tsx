@@ -70,43 +70,66 @@ export default function ServiceLandingPage({ page }: ServiceLandingPageProps) {
 
   return (
     <Layout contactCta={page.contactCta} address={page.address}>
-      {/* ============ HERO ============ */}
-      <section className="relative min-h-screen flex items-center pt-20">
-        <div className="absolute inset-0">
-          <img
-            src={heroImg}
-            alt="Moderan renoviran prostor"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/60 to-navy/20" />
+      {/* ============ HERO + OVERLAPPING CARDS ============ */}
+      <section className="relative">
+        {/* Hero background */}
+        <div className="relative min-h-screen flex items-center pb-40 lg:pb-48">
+          <div className="absolute inset-0">
+            <img
+              src={heroImg}
+              alt="Moderan renoviran prostor"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
+          </div>
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-20">
+            <div className="max-w-3xl">
+              <p className="text-warm font-semibold text-sm tracking-widest uppercase mb-6">
+                Vaš prostor. Naša strast.
+              </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.15] mb-6 tracking-tight">
+                {page.heroH1}
+              </h1>
+              <p className="text-lg sm:text-xl text-white/80 leading-relaxed mb-10 max-w-xl">
+                {page.heroSubhead}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="#kontakt"
+                  className="inline-flex items-center justify-center gap-2 bg-warm text-white font-semibold px-8 py-4 rounded-full text-base hover:bg-warm/90 transition-colors cursor-pointer no-underline"
+                >
+                  Zakažite besplatnu procenu
+                  <ChevronRight className="w-5 h-5" />
+                </a>
+                <a
+                  href="#usluge"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold px-8 py-4 rounded-full text-base hover:bg-white/10 transition-colors cursor-pointer no-underline"
+                >
+                  Pogledajte usluge
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 lg:py-0">
-          <div className="max-w-2xl">
-            <p className="text-warm font-semibold text-sm tracking-widest uppercase mb-6">
-              Vaš prostor. Naša strast.
-            </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-[1.08] mb-6">
-              {page.heroH1}
-            </h1>
-            <p className="text-lg sm:text-xl text-white/80 leading-relaxed mb-10 max-w-xl">
-              {page.heroSubhead}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#kontakt"
-                className="inline-flex items-center justify-center gap-2 bg-warm text-white font-semibold px-8 py-4 rounded-full text-base hover:bg-warm/90 transition-colors cursor-pointer no-underline"
+        {/* Overlapping service cards */}
+        <div className="relative -mt-32 lg:-mt-36 z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+          <div id="usluge" className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {page.services.map((service, i) => (
+              <div
+                key={service.title}
+                className="group bg-white rounded-2xl p-8 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden"
               >
-                Zakažite besplatnu procenu
-                <ChevronRight className="w-5 h-5" />
-              </a>
-              <a
-                href="#usluge"
-                className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-semibold px-8 py-4 rounded-full text-base hover:bg-white/10 transition-colors cursor-pointer no-underline"
-              >
-                Pogledajte usluge
-              </a>
-            </div>
+                <div className="flex justify-center mb-6">
+                  <div className="w-16 h-16 bg-warm/10 rounded-full flex items-center justify-center group-hover:bg-warm/20 transition-colors">
+                    <span className="text-warm font-bold text-xl">{CARD_ICONS[i]}</span>
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-navy mb-3 text-center uppercase tracking-wider">{service.title}</h3>
+                <p className="text-charcoal/60 leading-relaxed text-[15px] text-center">{service.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -118,36 +141,6 @@ export default function ServiceLandingPage({ page }: ServiceLandingPageProps) {
             <MapPin className="w-4 h-4 inline-block mr-2 text-warm align-text-bottom" />
             {page.trustBanner}
           </p>
-        </div>
-      </section>
-
-      {/* ============ SERVICE CARDS ============ */}
-      <section id="usluge" className="py-24 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 lg:mb-20">
-            <p className="text-warm font-semibold text-sm tracking-widest uppercase mb-4">Naše usluge</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy">
-              Šta nudimo
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {page.services.map((service, i) => (
-              <div
-                key={service.title}
-                className="group bg-cream rounded-2xl p-8 lg:p-10 hover:shadow-lg transition-all duration-300 border border-transparent hover:border-warm/20 relative overflow-hidden"
-              >
-                <span className="absolute top-4 right-6 text-warm font-extrabold text-6xl opacity-10 select-none">
-                  {CARD_ICONS[i]}
-                </span>
-                <div className="w-14 h-14 bg-warm/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-warm/20 transition-colors">
-                  <span className="text-warm font-bold text-lg">{CARD_ICONS[i]}</span>
-                </div>
-                <h3 className="text-xl font-bold text-navy mb-3">{service.title}</h3>
-                <p className="text-charcoal/60 leading-relaxed text-[15px]">{service.description}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
