@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --color-navy: #1a2332;
+  --color-navy-light: #2a3a4e;
+  --color-charcoal: #2d3436;
+  --color-warm: #d4a574;
+  --color-warm-light: #f5e6d3;
+  --color-warm-bg: #faf6f1;
+  --color-beige: #f0e6d8;
+  --color-cream: #fdfbf7;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--color-charcoal);
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Before/After Slider */
+@layer components {
+  .ba-slider {
+    position: relative;
+    overflow: hidden;
+    cursor: col-resize;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .ba-slider .ba-before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .ba-slider .ba-before img,
+  .ba-slider .ba-after img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  .ba-slider .ba-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: white;
+    cursor: col-resize;
+    z-index: 10;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  }
+
+  .ba-slider .ba-handle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  }
+
+  .ba-slider .ba-handle .ba-arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-navy);
+    font-weight: 700;
+    font-size: 14px;
+    pointer-events: none;
+  }
+}

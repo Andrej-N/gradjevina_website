@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"E:/PROJECTS/demo presentations/grajdevinska_firma\" && npx create-react-app@latest . --template typescript 2>&1 | tail -5)",
+      "Bash(cd \"E:/PROJECTS/demo presentations/grajdevinska_firma\" && npm install -D tailwindcss @tailwindcss/postcss postcss 2>&1 | tail -3)",
+      "Bash(cd \"E:/PROJECTS/demo presentations/grajdevinska_firma\" && npm install lucide-react 2>&1 | tail -3)",
+      "Bash(cd \"E:/PROJECTS/demo presentations/grajdevinska_firma\" && rm -rf node_modules package.json package-lock.json && npm create vite@latest . -- --template react-ts 2>&1)",
+      "Read(//e/PROJECTS/demo presentations/**)",
+      "Bash(npx create-vite@latest grajdevinska_temp --template react-ts)",
+      "Bash(cp -r \"E:/PROJECTS/demo presentations/grajdevinska_temp/\"* \"E:/PROJECTS/demo presentations/grajdevinska_firma/\" && cp \"E:/PROJECTS/demo presentations/grajdevinska_temp/\".* \"E:/PROJECTS/demo presentations/grajdevinska_firma/\" 2>/dev/null; rm -rf \"E:/PROJECTS/demo presentations/grajdevinska_temp\" && ls \"E:/PROJECTS/demo presentations/grajdevinska_firma/\")",
+      "Bash(cd \"E:/PROJECTS/demo presentations/grajdevinska_firma\" && npm install -D tailwindcss @tailwindcss/postcss postcss && npm install lucide-react 2>&1 | tail -5)",
+      "Bash(cd \"E:\\\\PROJECTS\\\\demo presentations\\\\grajdevinska_firma\" && npm install react-router-dom)",
+      "Bash(cd \"E:\\\\PROJECTS\\\\demo presentations\\\\grajdevinska_firma\" && npx tsc --noEmit 2>&1 | head -30)",
+      "Bash(cd \"E:\\\\PROJECTS\\\\demo presentations\\\\grajdevinska_firma\" && npx vite build 2>&1 | tail -15)",
+      "Bash(cd \"E:/PROJECTS/demo presentations/grajdevinska_firma\" && rm src/App.tsx src/pages/CityLandingPage.tsx src/data/cityConfig.ts src/data/cities/kragujevac.ts && rmdir src/data/cities)",
+      "Bash(cd \"E:/PROJECTS/demo presentations/grajdevinska_firma\" && npx tsc --noEmit 2>&1)"
+    ]
+  }
+}
