@@ -12,7 +12,7 @@ const pages = [molerskeUsluge, keramicerskiRadovi, adaptacijeStanova]
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/gradjevina_website">
       <Routes>
         {pages.map((page) => (
           <Route
