@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  Home,
   Menu,
   X,
   Phone,
@@ -9,12 +8,32 @@ import {
   Clock,
   MapPin,
 } from 'lucide-react';
+import logo from '../assets/images/logo.JPG';
 
-const NAV_LINKS = [
-  { label: 'Molerske usluge', href: '/molerske-usluge-kragujevac' },
-  { label: 'Keramičarski radovi', href: '/keramicarski-radovi-kragujevac' },
-  { label: 'Adaptacije stanova', href: '/adaptacije-stanova-kragujevac' },
+const SERVICE_BASES = [
+  { label: 'Molerske usluge', base: 'molerske-usluge' },
+  { label: 'Keramičarski radovi', base: 'keramicarski-radovi' },
+  { label: 'Adaptacije stanova', base: 'adaptacije-stanova' },
 ];
+
+function getNavLinks(pathname: string) {
+  // Extract city suffix from current path, e.g. "/molerske-usluge-beograd" -> "beograd"
+  const slug = pathname.replace(/^\//, '');
+  for (const { base } of SERVICE_BASES) {
+    if (slug.startsWith(base + '-')) {
+      const city = slug.slice(base.length + 1);
+      return SERVICE_BASES.map(({ label, base: b }) => ({
+        label,
+        href: `/${b}-${city}`,
+      }));
+    }
+  }
+  // Fallback to Kragujevac
+  return SERVICE_BASES.map(({ label, base: b }) => ({
+    label,
+    href: `/${b}-kragujevac`,
+  }));
+}
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -26,6 +45,7 @@ export default function Layout({ children, contactCta, address }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navLinks = getNavLinks(location.pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -45,25 +65,19 @@ export default function Layout({ children, contactCta, address }: LayoutProps) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            <Link to="/molerske-usluge-kragujevac" className="flex items-center gap-2 no-underline">
-              <div
-                className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-300 ${
-                  scrolled ? 'bg-navy' : 'bg-white/20 backdrop-blur-sm'
-                }`}
-              >
-                <Home className="w-5 h-5 text-white" />
-              </div>
+            <Link to={navLinks[0].href} className="flex items-center gap-2 no-underline">
+              <img src={logo} alt="Relux Concept" className="h-9 lg:h-10 w-auto rounded-lg" />
               <span
                 className={`text-xl font-bold tracking-tight transition-colors duration-300 ${
                   scrolled ? 'text-navy' : 'text-white'
                 }`}
               >
-                MajstorPro
+                Relux Concept
               </span>
             </Link>
 
             <nav className="hidden lg:flex items-center gap-8">
-              {NAV_LINKS.map(({ label, href }) => (
+              {navLinks.map(({ label, href }) => (
                 <Link
                   key={href}
                   to={href}
@@ -108,7 +122,7 @@ export default function Layout({ children, contactCta, address }: LayoutProps) {
               }`}
             >
               <nav className="flex flex-col gap-4 px-4">
-                {NAV_LINKS.map(({ label, href }) => (
+                {navLinks.map(({ label, href }) => (
                   <Link
                     key={href}
                     to={href}
@@ -143,26 +157,24 @@ export default function Layout({ children, contactCta, address }: LayoutProps) {
       {/* ============ FOOTER ============ */}
       <footer id="kontakt" className="bg-navy pt-20 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 pb-16 border-b border-white/10">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-16 pb-16 border-b border-white/10">
             {/* Contact Info */}
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-9 h-9 bg-warm rounded-lg flex items-center justify-center">
-                  <Home className="w-5 h-5 text-white" />
-                </div>
-                <span className="text-xl font-bold text-white tracking-tight">MajstorPro</span>
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <img src={logo} alt="Relux Concept" className="h-9 w-auto rounded-lg" />
+                <span className="text-xl font-bold text-white tracking-tight">Relux Concept</span>
               </div>
               <p className="text-white/50 leading-relaxed mb-8">
                 {contactCta}
               </p>
-              <div className="space-y-4">
+              <div className="space-y-4 inline-flex flex-col items-start">
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-warm" />
                   <span className="text-white/80">+381 63 123 4567</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-warm" />
-                  <span className="text-white/80">info@majstorpro.rs</span>
+                  <span className="text-white/80">info@reluxconcept.rs</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-warm" />
@@ -179,10 +191,10 @@ export default function Layout({ children, contactCta, address }: LayoutProps) {
             </div>
 
             {/* Service Links */}
-            <div>
+            <div className="text-center">
               <h4 className="text-white font-semibold text-lg mb-6">Naše usluge</h4>
               <nav className="flex flex-col gap-3">
-                {NAV_LINKS.map(({ label, href }) => (
+                {navLinks.map(({ label, href }) => (
                   <Link
                     key={href}
                     to={href}
@@ -193,39 +205,11 @@ export default function Layout({ children, contactCta, address }: LayoutProps) {
                 ))}
               </nav>
             </div>
-
-            {/* Contact Form */}
-            <div>
-              <h4 className="text-white font-semibold text-lg mb-6">Pošaljite upit</h4>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <input
-                  type="text"
-                  placeholder="Vaše ime"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-warm/50 transition-colors text-[15px]"
-                />
-                <input
-                  type="tel"
-                  placeholder="Broj telefona"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-warm/50 transition-colors text-[15px]"
-                />
-                <textarea
-                  placeholder="Opišite vaš projekat..."
-                  rows={3}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/30 focus:outline-none focus:border-warm/50 transition-colors resize-none text-[15px]"
-                />
-                <button
-                  type="submit"
-                  className="w-full bg-warm text-white font-semibold py-3 rounded-xl hover:bg-warm/90 transition-colors cursor-pointer border-none text-[15px]"
-                >
-                  Zatražite ponudu
-                </button>
-              </form>
-            </div>
           </div>
 
           <div className="pt-8 text-center">
             <p className="text-white/30 text-sm">
-              &copy; 2026 MajstorPro. Sva prava zadržana.
+              &copy; 2026 Relux Concept. Sva prava zadržana.
             </p>
           </div>
         </div>

@@ -2,15 +2,15 @@ import type { ServicePageConfig } from '../servicePageConfig';
 import heroMoleraj from '../../assets/images/hero_moleraj.PNG';
 import beforeAfterMoleraj from '../../assets/images/beforeafter_moleraj.png';
 
-const molerskeUsluge: ServicePageConfig = {
-  slug: 'molerske-usluge-kragujevac',
-  metaTitle: 'Molerske usluge Kragujevac | Gletovanje i krečenje stanova',
-  metaDescription: 'Profesionalne molerske usluge u Kragujevcu. Gletovanje, krečenje i dekorativne tehnike uz besplatan izlazak. Pozovite za ponudu!',
-  heroH1: 'Vrhunske molerske usluge u Kragujevcu.',
+const molerskeUslugeNis: ServicePageConfig = {
+  slug: 'molerske-usluge-nis',
+  metaTitle: 'Molerske usluge Niš | Profesionalno gletovanje i krečenje',
+  metaDescription: 'Profesionalne molerske usluge u Nišu. Gletovanje, krečenje i dekorativne tehnike sa besplatnim izlaskom na teren. Pozovite nas!',
+  heroH1: 'Vrhunske molerske usluge u Nišu.',
   heroSubhead:
-    'Besprekorno gletovanje, krečenje i dekorativne tehnike. Osvežite svoj prostor uz pedantne majstore na teritoriji cele Šumadije.',
+    'Besprekorno gletovanje, krečenje i dekorativne tehnike. Osvežite svoj prostor uz pedantne majstore na teritoriji celog Niša.',
   trustBanner:
-    'Besplatan dolazak i procena radova - Kragujevac (Aerodrom, Bubanj, Pivara, Centar...)',
+    'Besplatan dolazak i procena radova - Niš (Medijana, Palilula, Pantelej, Crveni Krst, Niška Banja...)',
   services: [
     {
       title: 'Gletovanje i priprema',
@@ -27,17 +27,17 @@ const molerskeUsluge: ServicePageConfig = {
   ],
   testimonial: {
     quote:
-      'Zidovi su savršeno ravni, a majstori su sve zaštitili folijama. Nije bilo ni kapi boje na parketu!',
-    author: 'Milan, Kragujevac',
+      'Majstori su odlično odradili gletovanje i krečenje u našem stanu na Medijani. Brzo, čisto i profesionalno!',
+    author: 'Jovana, Niš',
   },
   heroImage: heroMoleraj,
-  heroImageAlt: 'Profesionalni moleraj u Kragujevcu - krečenje i gletovanje stana',
+  heroImageAlt: 'Molerske usluge u Nišu - gletovanje i krečenje stana',
   beforeAfterImage: beforeAfterMoleraj,
-  contactCta: 'Zatražite besplatnu ponudu za vaš projekat u Kragujevcu.',
-  address: 'Kragujevac, Srbija',
-  canonicalPath: '/gradjevina_website/molerske-usluge-kragujevac',
-  city: 'Kragujevac',
+  contactCta: 'Zatražite besplatnu ponudu za vaš projekat u Nišu.',
+  address: 'Niš, Srbija',
+  canonicalPath: '/gradjevina_website/molerske-usluge-nis',
+  city: 'Niš',
   serviceType: 'moleraj',
 };
 
-export default molerskeUsluge;
+export default molerskeUslugeNis;

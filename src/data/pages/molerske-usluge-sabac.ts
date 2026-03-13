@@ -2,15 +2,15 @@ import type { ServicePageConfig } from '../servicePageConfig';
 import heroMoleraj from '../../assets/images/hero_moleraj.PNG';
 import beforeAfterMoleraj from '../../assets/images/beforeafter_moleraj.png';
 
-const molerskeUsluge: ServicePageConfig = {
-  slug: 'molerske-usluge-kragujevac',
-  metaTitle: 'Molerske usluge Kragujevac | Gletovanje i krečenje stanova',
-  metaDescription: 'Profesionalne molerske usluge u Kragujevcu. Gletovanje, krečenje i dekorativne tehnike uz besplatan izlazak. Pozovite za ponudu!',
-  heroH1: 'Vrhunske molerske usluge u Kragujevcu.',
+const molerskeUslugeSabac: ServicePageConfig = {
+  slug: 'molerske-usluge-sabac',
+  metaTitle: 'Molerske usluge Šabac | Gletovanje i krečenje stanova',
+  metaDescription: 'Profesionalne molerske usluge u Šapcu. Gletovanje, krečenje i dekorativne tehnike uz besplatan dolazak i procenu. Pozovite nas!',
+  heroH1: 'Vrhunske molerske usluge u Šapcu.',
   heroSubhead:
-    'Besprekorno gletovanje, krečenje i dekorativne tehnike. Osvežite svoj prostor uz pedantne majstore na teritoriji cele Šumadije.',
+    'Besprekorno gletovanje, krečenje i dekorativne tehnike. Osvežite svoj prostor uz pedantne majstore na teritoriji celog Šapca.',
   trustBanner:
-    'Besplatan dolazak i procena radova - Kragujevac (Aerodrom, Bubanj, Pivara, Centar...)',
+    'Besplatan dolazak i procena radova - Šabac i okolina',
   services: [
     {
       title: 'Gletovanje i priprema',
@@ -27,17 +27,17 @@ const molerskeUsluge: ServicePageConfig = {
   ],
   testimonial: {
     quote:
-      'Zidovi su savršeno ravni, a majstori su sve zaštitili folijama. Nije bilo ni kapi boje na parketu!',
-    author: 'Milan, Kragujevac',
+      'Gletovanje i krečenje u celom stanu završili su za dva dana. Zidovi kao ogledalo, odlična ekipa!',
+    author: 'Dejan, Šabac',
   },
   heroImage: heroMoleraj,
-  heroImageAlt: 'Profesionalni moleraj u Kragujevcu - krečenje i gletovanje stana',
+  heroImageAlt: 'Molerske usluge u Šapcu - profesionalno krečenje i gletovanje',
   beforeAfterImage: beforeAfterMoleraj,
-  contactCta: 'Zatražite besplatnu ponudu za vaš projekat u Kragujevcu.',
-  address: 'Kragujevac, Srbija',
-  canonicalPath: '/gradjevina_website/molerske-usluge-kragujevac',
-  city: 'Kragujevac',
+  contactCta: 'Zatražite besplatnu ponudu za vaš projekat u Šapcu.',
+  address: 'Šabac, Srbija',
+  canonicalPath: '/gradjevina_website/molerske-usluge-sabac',
+  city: 'Šabac',
   serviceType: 'moleraj',
 };
 
-export default molerskeUsluge;
+export default molerskeUslugeSabac;

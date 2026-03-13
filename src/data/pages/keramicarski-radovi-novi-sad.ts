@@ -2,15 +2,15 @@ import type { ServicePageConfig } from '../servicePageConfig';
 import heroKeramika from '../../assets/images/hero_keramika.PNG';
 import beforeAfterKeramika from '../../assets/images/beforeafter.PNG';
 
-const keramicerskiRadovi: ServicePageConfig = {
-  slug: 'keramicarski-radovi-kragujevac',
-  metaTitle: 'Keramičarski radovi Kragujevac | Postavljanje pločica i keramike',
-  metaDescription: 'Profesionalno postavljanje pločica u Kragujevcu. Keramičarski radovi za kupatila, kuhinje i terase. Besplatan izlazak i procena!',
-  heroH1: 'Precizni keramičarski radovi u Kragujevcu.',
+const keramicerskiRadoviNoviSad: ServicePageConfig = {
+  slug: 'keramicarski-radovi-novi-sad',
+  metaTitle: 'Keramičarski radovi Novi Sad | Pločice za kupatila i kuhinje',
+  metaDescription: 'Stručno postavljanje pločica u Novom Sadu. Keramičarski radovi za kupatila, kuhinje i terase uz garanciju kvaliteta. Pozovite!',
+  heroH1: 'Precizni keramičarski radovi u Novom Sadu.',
   heroSubhead:
-    'Milimetarska preciznost, savršene fuge i poštovanje rokova. Vaš pouzdan majstor za postavljanje keramike u kupatilima i kuhinjama.',
+    'Milimetarska preciznost, savršene fuge i poštovanje rokova. Vaš pouzdan majstor za postavljanje keramike u kupatilima i kuhinjama širom Novog Sada.',
   trustBanner:
-    'Izlazak na teren na celoj teritoriji Kragujevca i okoline.',
+    'Izlazak na teren na celoj teritoriji Novog Sada i okoline (Liman, Detelinara, Grbavica, Petrovaradin...)',
   services: [
     {
       title: 'Kupatila i kuhinje',
@@ -27,17 +27,17 @@ const keramicerskiRadovi: ServicePageConfig = {
   ],
   testimonial: {
     quote:
-      'Odradili su celo kupatilo na Aerodromu za nekoliko dana. Fuge su savršene, sve u milimetar pravo.',
-    author: 'Jelena, naselje Aerodrom',
+      'Postavljali su keramiku u kupatilu i kuhinji na Grbavici. Izuzetno precizni, sve čisto za sobom ostavili!',
+    author: 'Dragan, Novi Sad',
   },
   heroImage: heroKeramika,
-  heroImageAlt: 'Keramičarski radovi u Kragujevcu - postavljanje pločica u kupatilu',
+  heroImageAlt: 'Keramičarski radovi u Novom Sadu - postavljanje keramičkih pločica',
   beforeAfterImage: beforeAfterKeramika,
-  contactCta: 'Zatražite besplatnu ponudu za vaš projekat u Kragujevcu.',
-  address: 'Kragujevac, Srbija',
-  canonicalPath: '/gradjevina_website/keramicarski-radovi-kragujevac',
-  city: 'Kragujevac',
+  contactCta: 'Zatražite besplatnu ponudu za vaš projekat u Novom Sadu.',
+  address: 'Novi Sad, Srbija',
+  canonicalPath: '/gradjevina_website/keramicarski-radovi-novi-sad',
+  city: 'Novi Sad',
   serviceType: 'keramika',
 };
 
-export default keramicerskiRadovi;
+export default keramicerskiRadoviNoviSad;

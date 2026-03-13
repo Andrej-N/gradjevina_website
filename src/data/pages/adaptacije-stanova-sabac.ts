@@ -2,14 +2,14 @@ import type { ServicePageConfig } from '../servicePageConfig';
 import heroAdaptacija from '../../assets/images/hero.PNG';
 import beforeAfterAdaptacija from '../../assets/images/beforeafter_adaptacija.png';
 
-const adaptacijeStanova: ServicePageConfig = {
-  slug: 'adaptacije-stanova-kragujevac',
-  metaTitle: 'Adaptacija stanova Kragujevac | Renoviranje ključ u ruke',
-  metaDescription: 'Kompletna adaptacija stanova u Kragujevcu po sistemu ključ u ruke. Rušenje, gipsarski radovi i renoviranje. Pozovite danas!',
-  heroH1: 'Kompletne adaptacije stanova i lokala u Kragujevcu.',
+const adaptacijeStanovaSabac: ServicePageConfig = {
+  slug: 'adaptacije-stanova-sabac',
+  metaTitle: 'Adaptacija stanova Šabac | Renoviranje ključ u ruke',
+  metaDescription: 'Kompletna adaptacija stanova u Šapcu po sistemu ključ u ruke. Rušenje, gipsarski radovi i završna obrada. Pozovite za procenu!',
+  heroH1: 'Kompletne adaptacije stanova i lokala u Šapcu.',
   heroSubhead:
     "Od rušenja do završnog premaza. Pouzdan tim majstora za renoviranje vašeg prostora po sistemu 'ključ u ruke' bez probijanja rokova.",
-  trustBanner: 'Vaš partner za renoviranje u srcu Šumadije.',
+  trustBanner: 'Vaš partner za renoviranje u Šapcu i okolini.',
   services: [
     {
       title: 'Rušenje i odvoz šuta',
@@ -26,17 +26,17 @@ const adaptacijeStanova: ServicePageConfig = {
   ],
   testimonial: {
     quote:
-      'Kupili smo star stan kod Velikog parka i ova ekipa ga je potpuno transformisala. Ispoštovali su dogovorenu cenu u dinar.',
-    author: 'Nikola, Kragujevac',
+      'Renovirali su nam stan kompletno — od podova do plafona. Sve urađeno kako treba, cena fer!',
+    author: 'Branko, Šabac',
   },
   heroImage: heroAdaptacija,
-  heroImageAlt: 'Adaptacija stana u Kragujevcu - renoviranje prostora ključ u ruke',
+  heroImageAlt: 'Adaptacija stana u Šapcu - kompletno renoviranje prostora',
   beforeAfterImage: beforeAfterAdaptacija,
-  contactCta: 'Zatražite besplatnu ponudu za vaš projekat u Kragujevcu.',
-  address: 'Kragujevac, Srbija',
-  canonicalPath: '/gradjevina_website/adaptacije-stanova-kragujevac',
-  city: 'Kragujevac',
+  contactCta: 'Zatražite besplatnu ponudu za vaš projekat u Šapcu.',
+  address: 'Šabac, Srbija',
+  canonicalPath: '/gradjevina_website/adaptacije-stanova-sabac',
+  city: 'Šabac',
   serviceType: 'adaptacija',
 };
 
-export default adaptacijeStanova;
+export default adaptacijeStanovaSabac;

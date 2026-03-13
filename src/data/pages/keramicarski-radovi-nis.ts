@@ -2,15 +2,15 @@ import type { ServicePageConfig } from '../servicePageConfig';
 import heroKeramika from '../../assets/images/hero_keramika.PNG';
 import beforeAfterKeramika from '../../assets/images/beforeafter.PNG';
 
-const keramicerskiRadovi: ServicePageConfig = {
-  slug: 'keramicarski-radovi-kragujevac',
-  metaTitle: 'Keramičarski radovi Kragujevac | Postavljanje pločica i keramike',
-  metaDescription: 'Profesionalno postavljanje pločica u Kragujevcu. Keramičarski radovi za kupatila, kuhinje i terase. Besplatan izlazak i procena!',
-  heroH1: 'Precizni keramičarski radovi u Kragujevcu.',
+const keramicerskiRadoviNis: ServicePageConfig = {
+  slug: 'keramicarski-radovi-nis',
+  metaTitle: 'Keramičarski radovi Niš | Postavljanje keramike i pločica',
+  metaDescription: 'Keramičarski radovi u Nišu - precizno postavljanje pločica u kupatilima, kuhinjama i terasama. Besplatan izlazak. Pozovite odmah!',
+  heroH1: 'Precizni keramičarski radovi u Nišu.',
   heroSubhead:
-    'Milimetarska preciznost, savršene fuge i poštovanje rokova. Vaš pouzdan majstor za postavljanje keramike u kupatilima i kuhinjama.',
+    'Milimetarska preciznost, savršene fuge i poštovanje rokova. Vaš pouzdan majstor za postavljanje keramike u kupatilima i kuhinjama širom Niša.',
   trustBanner:
-    'Izlazak na teren na celoj teritoriji Kragujevca i okoline.',
+    'Izlazak na teren na celoj teritoriji Niša i okoline (Medijana, Palilula, Pantelej, Niška Banja...)',
   services: [
     {
       title: 'Kupatila i kuhinje',
@@ -27,17 +27,17 @@ const keramicerskiRadovi: ServicePageConfig = {
   ],
   testimonial: {
     quote:
-      'Odradili su celo kupatilo na Aerodromu za nekoliko dana. Fuge su savršene, sve u milimetar pravo.',
-    author: 'Jelena, naselje Aerodrom',
+      'Keramiku u kupatilu su postavili za dva dana, sve izgleda savršeno. Preporučujem svima u Nišu!',
+    author: 'Aleksandar, Niš',
   },
   heroImage: heroKeramika,
-  heroImageAlt: 'Keramičarski radovi u Kragujevcu - postavljanje pločica u kupatilu',
+  heroImageAlt: 'Keramičarski radovi u Nišu - postavljanje pločica u kupatilu',
   beforeAfterImage: beforeAfterKeramika,
-  contactCta: 'Zatražite besplatnu ponudu za vaš projekat u Kragujevcu.',
-  address: 'Kragujevac, Srbija',
-  canonicalPath: '/gradjevina_website/keramicarski-radovi-kragujevac',
-  city: 'Kragujevac',
+  contactCta: 'Zatražite besplatnu ponudu za vaš projekat u Nišu.',
+  address: 'Niš, Srbija',
+  canonicalPath: '/gradjevina_website/keramicarski-radovi-nis',
+  city: 'Niš',
   serviceType: 'keramika',
 };
 
-export default keramicerskiRadovi;
+export default keramicerskiRadoviNis;

@@ -9,10 +9,100 @@ import {
   Quote,
 } from 'lucide-react';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
+import CityNav from '../components/CityNav';
 import Layout from '../components/Layout';
+import SeoHead from '../components/SeoHead';
+import OptimizedImage from '../components/OptimizedImage';
 import type { ServicePageConfig } from '../data/servicePageConfig';
 
-import heroImg from '../assets/images/hero.PNG';
+import imgSpavacaSoba from '../assets/images/spavaca-soba-1.jpg';
+import imgDemoliranje from '../assets/images/demoliranje.jpg';
+import imgKuhinjaLed from '../assets/images/kuhinja-led.jpg';
+import imgKuhinjaBar from '../assets/images/kuhinja-bar.jpg';
+import imgKupatiloOgledalo from '../assets/images/kupatilo-ogledalo.jpg';
+import imgRenoviranje from '../assets/images/renoviranje.jpg';
+import imgKupatiloSire from '../assets/images/kupatilo-sire.jpg';
+import imgPostavljanjePlocica from '../assets/images/postavljanje-plocica.jpg';
+
+/*
+ * Collage layout (desktop 4-col grid):
+ *  ┌──────────────┬────────┬────────┐
+ *  │  kuhinja-bar │kupatilo│kuhinja │
+ *  │   (2×2)      │ogledalo│  LED   │
+ *  │              ├────────┼────────┤
+ *  │              │spavaća │demoli- │
+ *  │              │ soba   │ranje   │
+ *  ├────────┬─────┴────────┴────────┤
+ *  │renovi- │postav.│  kupatilo     │
+ *  │ranje   │pločica│   šire (2×2)  │
+ *  ├────────┴───────┤               │
+ *  │                │               │
+ *  └────────────────┴───────────────┘
+ */
+const galleryItems: {
+  src: string;
+  alt: string;
+  label: string;
+  tag: string;
+  className: string;
+}[] = [
+  {
+    src: imgKuhinjaBar,
+    alt: 'Moderna kuhinja sa bar stolicama',
+    label: 'Kuhinja',
+    tag: 'Završeno',
+    className: 'md:col-span-2 md:row-span-2',
+  },
+  {
+    src: imgKupatiloOgledalo,
+    alt: 'Kupatilo sa LED ogledalom',
+    label: 'Kupatilo',
+    tag: 'Završeno',
+    className: '',
+  },
+  {
+    src: imgKuhinjaLed,
+    alt: 'Kuhinja sa LED osvetljenjem',
+    label: 'Kuhinja sa LED',
+    tag: 'Završeno',
+    className: '',
+  },
+  {
+    src: imgSpavacaSoba,
+    alt: 'Elegantna spavaća soba',
+    label: 'Spavaća soba',
+    tag: 'Završeno',
+    className: '',
+  },
+  {
+    src: imgDemoliranje,
+    alt: 'Demoliranje prostora',
+    label: 'Demoliranje',
+    tag: 'U toku',
+    className: '',
+  },
+  {
+    src: imgRenoviranje,
+    alt: 'Renoviranje stana',
+    label: 'Renoviranje',
+    tag: 'U toku',
+    className: '',
+  },
+  {
+    src: imgPostavljanjePlocica,
+    alt: 'Postavljanje pločica',
+    label: 'Postavljanje pločica',
+    tag: 'U toku',
+    className: '',
+  },
+  {
+    src: imgKupatiloSire,
+    alt: 'Kupatilo - širi ugao',
+    label: 'Kupatilo',
+    tag: 'Završeno',
+    className: 'md:col-span-2 md:row-span-2',
+  },
+];
 
 function useSplitImage(src: string): { before: string; after: string } {
   const [images, setImages] = useState({ before: '', after: '' });
@@ -55,30 +145,23 @@ export default function ServiceLandingPage({ page }: ServiceLandingPageProps) {
   const { before: beforeImg, after: afterImg } = useSplitImage(page.beforeAfterImage);
 
   useEffect(() => {
-    document.title = page.metaTitle;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute('content', page.heroSubhead);
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = page.heroSubhead;
-      document.head.appendChild(meta);
-    }
     window.scrollTo(0, 0);
-  }, [page.metaTitle, page.heroSubhead]);
+  }, [page.slug]);
 
   return (
     <Layout contactCta={page.contactCta} address={page.address}>
+      <SeoHead page={page} />
+
       {/* ============ HERO + OVERLAPPING CARDS ============ */}
       <section className="relative">
         {/* Hero background */}
         <div className="relative min-h-screen flex items-center pb-40 lg:pb-48">
           <div className="absolute inset-0">
-            <img
-              src={heroImg}
-              alt="Moderan renoviran prostor"
+            <OptimizedImage
+              src={page.heroImage}
+              alt={page.heroImageAlt}
               className="w-full h-full object-cover"
+              loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20" />
           </div>
@@ -133,6 +216,9 @@ export default function ServiceLandingPage({ page }: ServiceLandingPageProps) {
           </div>
         </div>
       </section>
+
+      {/* ============ CITY NAV PILLS ============ */}
+      <CityNav />
 
       {/* ============ LOCAL TRUST BANNER ============ */}
       <section className="bg-navy border-b border-white/10">
@@ -222,6 +308,52 @@ export default function ServiceLandingPage({ page }: ServiceLandingPageProps) {
             ) : (
               <div className="aspect-[4/3] md:aspect-[16/10] rounded-2xl bg-cream animate-pulse" />
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ GALLERY - NAŠI RADOVI ============ */}
+      <section className="py-24 lg:py-32 bg-cream">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 lg:mb-20">
+            <p className="text-warm font-semibold text-sm tracking-widest uppercase mb-4">Portfolio</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-6">
+              Naši radovi
+            </h2>
+            <p className="text-charcoal/60 text-lg max-w-2xl mx-auto">
+              Pogledajte primere završenih projekata i radova u toku — od kuhinja i kupatila do kompletnih adaptacija.
+            </p>
+          </div>
+
+          {/* Collage grid — large hero images span 2×2, rest 1×1 */}
+          <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] sm:auto-rows-[240px] lg:auto-rows-[280px] gap-3 lg:gap-4">
+            {galleryItems.map((item, i) => (
+              <div
+                key={i}
+                className={`group relative rounded-2xl overflow-hidden cursor-pointer ${item.className}`}
+              >
+                <OptimizedImage
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                {/* Permanent subtle gradient at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/0 to-transparent" />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-navy/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Label — always visible at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-5">
+                  <span className={`inline-block text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-2 ${
+                    item.tag === 'Završeno'
+                      ? 'bg-emerald-500/90 text-white'
+                      : 'bg-warm/90 text-white'
+                  }`}>
+                    {item.tag}
+                  </span>
+                  <p className="text-white font-semibold text-sm lg:text-base drop-shadow-lg">{item.label}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

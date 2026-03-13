@@ -13,7 +13,12 @@
       "Bash(cd \"E:\\\\PROJECTS\\\\demo presentations\\\\grajdevinska_firma\" && npx tsc --noEmit 2>&1 | head -30)",
       "Bash(cd \"E:\\\\PROJECTS\\\\demo presentations\\\\grajdevinska_firma\" && npx vite build 2>&1 | tail -15)",
       "Bash(cd \"E:/PROJECTS/demo presentations/grajdevinska_firma\" && rm src/App.tsx src/pages/CityLandingPage.tsx src/data/cityConfig.ts src/data/cities/kragujevac.ts && rmdir src/data/cities)",
-      "Bash(cd \"E:/PROJECTS/demo presentations/grajdevinska_firma\" && npx tsc --noEmit 2>&1)"
+      "Bash(cd \"E:/PROJECTS/demo presentations/grajdevinska_firma\" && npx tsc --noEmit 2>&1)",
+      "Bash(cd \"E:\\\\PROJECTS\\\\demo presentations\\\\grajdevinska_firma\" && npm run build 2>&1 | tail -20)",
+      "Bash(cd \"E:\\\\PROJECTS\\\\demo presentations\\\\grajdevinska_firma\" && npx tsc --noEmit 2>&1 | head -20)",
+      "Bash(cd \"E:\\\\PROJECTS\\\\demo presentations\\\\grajdevinska_firma\\\\src\\\\assets\\\\images\" && mv \"0E796D72-E280-4ED2-B545-95F2E788AE12.JPG\" \"spavaca-soba-1.jpg\" && mv \"3967A299-636B-4576-9167-72B466A4A370.JPG\" \"demoliranje.jpg\" && mv \"98F8914E-FF87-42F6-AC4B-756214DA3889.JPG\" \"kuhinja-led.jpg\" && mv \"ABC61253-3120-432F-8CAE-67E70D452ABE.JPG\" \"kuhinja-bar.jpg\" && mv \"C8EB89C4-5FC3-482A-A3F7-8B5A6957CF8E.JPG\" \"kupatilo-ogledalo.jpg\" && mv \"D544D949-8A53-4A38-B3C4-B0C0B890EFCA.JPG\" \"renoviranje.jpg\" && mv \"E83FD6EA-14B8-468D-8229-82C277A18CA2.JPG\" \"kupatilo-sire.jpg\" && mv \"F1C06487-172E-4B8C-8F05-D67D74F64B3D.JPG\" \"postavljanje-plocica.jpg\" && mv \"F7F367D9-567F-4609-A87D-2BF47E235404.JPG\" \"spavaca-soba-2.jpg\" && mv \"FCE5F484-1D75-445B-BA56-FF9DBAE550E2.JPG\" \"kuhinja-2.jpg\" && echo \"Done\")",
+      "Bash(cd \"E:/PROJECTS/demo presentations/grajdevinska_firma\" && node -e \"try { require\\('sharp'\\); console.log\\('sharp available'\\); } catch\\(e\\) { console.log\\('no sharp'\\); }\")",
+      "Bash(cd \"E:\\\\PROJECTS\\\\demo presentations\\\\grajdevinska_firma\" && npm install react-helmet-async)"
     ]
   }
 }

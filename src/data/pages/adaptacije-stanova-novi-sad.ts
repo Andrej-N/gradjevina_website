@@ -2,14 +2,14 @@ import type { ServicePageConfig } from '../servicePageConfig';
 import heroAdaptacija from '../../assets/images/hero.PNG';
 import beforeAfterAdaptacija from '../../assets/images/beforeafter_adaptacija.png';
 
-const adaptacijeStanova: ServicePageConfig = {
-  slug: 'adaptacije-stanova-kragujevac',
-  metaTitle: 'Adaptacija stanova Kragujevac | Renoviranje ključ u ruke',
-  metaDescription: 'Kompletna adaptacija stanova u Kragujevcu po sistemu ključ u ruke. Rušenje, gipsarski radovi i renoviranje. Pozovite danas!',
-  heroH1: 'Kompletne adaptacije stanova i lokala u Kragujevcu.',
+const adaptacijeStanovaNoviSad: ServicePageConfig = {
+  slug: 'adaptacije-stanova-novi-sad',
+  metaTitle: 'Adaptacija stanova Novi Sad | Renoviranje po sistemu ključ u ruke',
+  metaDescription: 'Kompletna adaptacija stanova u Novom Sadu. Renoviranje ključ u ruke - od rušenja do predaje gotovog prostora. Pozovite za procenu!',
+  heroH1: 'Kompletne adaptacije stanova i lokala u Novom Sadu.',
   heroSubhead:
     "Od rušenja do završnog premaza. Pouzdan tim majstora za renoviranje vašeg prostora po sistemu 'ključ u ruke' bez probijanja rokova.",
-  trustBanner: 'Vaš partner za renoviranje u srcu Šumadije.',
+  trustBanner: 'Vaš partner za renoviranje širom Novog Sada i Vojvodine.',
   services: [
     {
       title: 'Rušenje i odvoz šuta',
@@ -26,17 +26,17 @@ const adaptacijeStanova: ServicePageConfig = {
   ],
   testimonial: {
     quote:
-      'Kupili smo star stan kod Velikog parka i ova ekipa ga je potpuno transformisala. Ispoštovali su dogovorenu cenu u dinar.',
-    author: 'Nikola, Kragujevac',
+      'Kompletna adaptacija stana na Detelinari — od rušenja do useljenja za mesec dana. Sve po dogovoru!',
+    author: 'Maja, Novi Sad',
   },
   heroImage: heroAdaptacija,
-  heroImageAlt: 'Adaptacija stana u Kragujevcu - renoviranje prostora ključ u ruke',
+  heroImageAlt: 'Adaptacija stana u Novom Sadu - renoviranje prostora od početka do kraja',
   beforeAfterImage: beforeAfterAdaptacija,
-  contactCta: 'Zatražite besplatnu ponudu za vaš projekat u Kragujevcu.',
-  address: 'Kragujevac, Srbija',
-  canonicalPath: '/gradjevina_website/adaptacije-stanova-kragujevac',
-  city: 'Kragujevac',
+  contactCta: 'Zatražite besplatnu ponudu za vaš projekat u Novom Sadu.',
+  address: 'Novi Sad, Srbija',
+  canonicalPath: '/gradjevina_website/adaptacije-stanova-novi-sad',
+  city: 'Novi Sad',
   serviceType: 'adaptacija',
 };
 
-export default adaptacijeStanova;
+export default adaptacijeStanovaNoviSad;

@@ -2,15 +2,15 @@ import type { ServicePageConfig } from '../servicePageConfig';
 import heroMoleraj from '../../assets/images/hero_moleraj.PNG';
 import beforeAfterMoleraj from '../../assets/images/beforeafter_moleraj.png';
 
-const molerskeUsluge: ServicePageConfig = {
-  slug: 'molerske-usluge-kragujevac',
-  metaTitle: 'Molerske usluge Kragujevac | Gletovanje i krečenje stanova',
-  metaDescription: 'Profesionalne molerske usluge u Kragujevcu. Gletovanje, krečenje i dekorativne tehnike uz besplatan izlazak. Pozovite za ponudu!',
-  heroH1: 'Vrhunske molerske usluge u Kragujevcu.',
+const molerskeUslugeNoviSad: ServicePageConfig = {
+  slug: 'molerske-usluge-novi-sad',
+  metaTitle: 'Molerske usluge Novi Sad | Gletovanje i krečenje stanova',
+  metaDescription: 'Vrhunske molerske usluge u Novom Sadu. Gletovanje, krečenje i dekorativne tehnike sa besplatnim dolaskom. Pozovite za ponudu!',
+  heroH1: 'Vrhunske molerske usluge u Novom Sadu.',
   heroSubhead:
-    'Besprekorno gletovanje, krečenje i dekorativne tehnike. Osvežite svoj prostor uz pedantne majstore na teritoriji cele Šumadije.',
+    'Besprekorno gletovanje, krečenje i dekorativne tehnike. Osvežite svoj prostor uz pedantne majstore na teritoriji celog Novog Sada.',
   trustBanner:
-    'Besplatan dolazak i procena radova - Kragujevac (Aerodrom, Bubanj, Pivara, Centar...)',
+    'Besplatan dolazak i procena radova - Novi Sad (Liman, Detelinara, Grbavica, Petrovaradin...)',
   services: [
     {
       title: 'Gletovanje i priprema',
@@ -27,17 +27,17 @@ const molerskeUsluge: ServicePageConfig = {
   ],
   testimonial: {
     quote:
-      'Zidovi su savršeno ravni, a majstori su sve zaštitili folijama. Nije bilo ni kapi boje na parketu!',
-    author: 'Milan, Kragujevac',
+      'Ekipa je stigla na vreme i odradila gletovanje i krečenje celog stana na Limanu za tri dana. Prezadovoljna sam!',
+    author: 'Ivana, Novi Sad',
   },
   heroImage: heroMoleraj,
-  heroImageAlt: 'Profesionalni moleraj u Kragujevcu - krečenje i gletovanje stana',
+  heroImageAlt: 'Molerske usluge u Novom Sadu - profesionalno krečenje i gletovanje',
   beforeAfterImage: beforeAfterMoleraj,
-  contactCta: 'Zatražite besplatnu ponudu za vaš projekat u Kragujevcu.',
-  address: 'Kragujevac, Srbija',
-  canonicalPath: '/gradjevina_website/molerske-usluge-kragujevac',
-  city: 'Kragujevac',
+  contactCta: 'Zatražite besplatnu ponudu za vaš projekat u Novom Sadu.',
+  address: 'Novi Sad, Srbija',
+  canonicalPath: '/gradjevina_website/molerske-usluge-novi-sad',
+  city: 'Novi Sad',
   serviceType: 'moleraj',
 };
 
-export default molerskeUsluge;
+export default molerskeUslugeNoviSad;
